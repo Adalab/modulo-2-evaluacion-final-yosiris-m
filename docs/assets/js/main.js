@@ -1,0 +1,1 @@
+"use strict";const{series:series}=require("gulp");console.log(">> Ready :)");
