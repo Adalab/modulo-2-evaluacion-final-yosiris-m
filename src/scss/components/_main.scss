@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: row;
+
+  &__SerieFav {
+    width: 50vw;
+  }
+}
+.item {
+  background-color: pink;
+  color: rgb(131, 8, 8);
+  margin-bottom: 20px;
+}
+
+.itemFav {
+  background-color: rgb(131, 8, 8);
+  color: pink;
+  margin-bottom: 20px;
+}
+
+.favListItemImg {
+  width: 100px;
+}

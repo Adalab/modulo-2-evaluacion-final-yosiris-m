@@ -11,28 +11,32 @@
     <div class="page">
       
       <main>
-        <h1>Buscador de series</h1>
-        <input
-          class="js-inputName"
-          type="text"
-          name="note"
-          id="inputSearch"
-          value="dexter"
-        />
-        <button class="js-btnSearch">Search</button>
-        <ul class="js-listSearch"></ul>
-        <div class="js-tvSeriesList">
-          <!-- <li>
-            <p>titulo</p>
-            <img
-              src="https://bioritmefestival.org/wp-content/uploads/2017/11/img-test.png"
-              alt=""
+        <h1 class="title">Buscador de series</h1>
 
-            />
-          </li> -->
+        <div class="container">
+          <div class="container__SerieFav">
+            <div>
+              <input
+                class="js-inputName container__inputName"
+                type="text"
+                name="note"
+                id="inputSearch"
+                value="dexter"
+              />
+              <button class="js-btnSearch container__btnSearch">Search</button>
+            </div>
+            <h2>Mis series favoritas</h2>
+            <div class="js-favorites container__favorites"></div>
+          </div>
+
+          <div>
+            <ul class="js-tvSeriesList container__tvSeriesList"></ul>
+          </div>
+
+          <!-- <button class="js-deleteFavorites container_deleteFavorites"> -->
+          <!-- Eliminar favoritas
+          </button> -->
         </div>
-        <div class="js-favorites">Mis series favoritas</div>
-        <button class="js-deleteFavorites">Eliminar favoritas</button>
       </main>
 
       
