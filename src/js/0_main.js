@@ -22,10 +22,15 @@ function printTvSeriesList(data) {
   for (const tvSeries of data) {
     console.log(tvSeries);
 
-    const item = document.createElement("div");
+    const item = document.createElement("li");
     tvSeriesList.appendChild(item);
 
+    const title = document.createElement("p");
+    title.innerText = tvSeries.show.name;
+    item.appendChild(title);
+
     const img = document.createElement("img");
+
     if (tvSeries.show.image === null) {
       //la imagen de la serie es nula
       img.src = `https://via.placeholder.com/210x295/ffffff/666666/?text=${tvSeries.show.name}`;
@@ -34,6 +39,7 @@ function printTvSeriesList(data) {
       img.src = tvSeries.show.image.medium;
       // console.log(tvSeries.show.image.medium);
     }
+    //img.src = tvSeries.show.image.name;
 
     item.appendChild(img);
   }
@@ -42,6 +48,7 @@ function clearTvSeriesList() {
   //con esta funcion elimino los elementos buscados
   tvSeriesList.innerHTML = "";
 }
+
 //console.log(onBtnSearchClick());
 
 // Por cada show contenido en el resultado de la búsqueda hay que pintar una tarjeta donde mostramos
