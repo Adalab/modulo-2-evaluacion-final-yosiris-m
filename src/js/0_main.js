@@ -5,7 +5,16 @@ const btnSearch = document.querySelector(".js-btnSearch");
 const btnDeleteFav = document.querySelector(".js-deleteFavorites");
 const tvSeriesList = document.querySelector(".js-tvSeriesList");
 const tvSeriesFavList = document.querySelector(".js-favorites");
-const favorites = [];
+
+const localFavorites = localStorage.getItem("favorites");
+
+let favorites;
+// no hay nada guardado
+if (localFavorites === null) {
+  favorites = [];
+} else {
+  favorites = JSON.parse(localFavorites);
+}
 
 // extraer los datos de la api
 function onBtnSearchClick() {
@@ -49,7 +58,9 @@ function printTvSeriesList(data) {
       const titleFav = document.createElement("p");
       titleFav.innerText = tvSeries.show.name;
       item.className = "itemFav";
+
       favorites.push(tvSeries);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
 
       const imgFav = document.createElement("img");
       imgFav.className = "favListItemImg";
@@ -74,4 +85,26 @@ function printTvSeriesList(data) {
 function clearTvSeriesList() {
   //con esta funcion elimino los elementos buscados
   tvSeriesList.innerHTML = "";
+}
+
+for (const show of favorites) {
+  const itemFav = document.createElement("li");
+
+  const titleFav = document.createElement("p");
+  titleFav.innerText = show.show.name;
+
+  const imgFav = document.createElement("img");
+  imgFav.className = "favListItemImg";
+
+  if (show.show.image === null) {
+    //la imagen de la serie es nula
+    imgFav.src = `https://via.placeholder.com/210x295/ffffff/666666/?text=${tvSeries.show.name}`;
+  } else {
+    //cuando la imagen de la serie no es nula
+    imgFav.src = show.show.image.medium;
+  }
+
+  tvSeriesFavList.appendChild(itemFav);
+  itemFav.appendChild(imgFav);
+  itemFav.appendChild(titleFav);
 }

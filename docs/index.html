@@ -15,27 +15,26 @@
 
         <div class="container">
           <div class="container__SerieFav">
-            <div>
+            <form>
               <input
                 class="js-inputName container__inputName"
                 type="text"
-                name="note"
-                id="inputSearch"
-                value="dexter"
+                value="boj"
               />
-              <button class="js-btnSearch container__btnSearch">Search</button>
-            </div>
+              <button type="button" class="js-btnSearch container__btnSearch">
+                Search
+              </button>
+            </form>
             <h2>Mis series favoritas</h2>
             <div class="js-favorites container__favorites"></div>
+            <button class="js-deleteFavorites container_deleteFavorites">
+              Eliminar favoritas
+            </button>
           </div>
 
           <div>
             <ul class="js-tvSeriesList container__tvSeriesList"></ul>
           </div>
-
-          <!-- <button class="js-deleteFavorites container_deleteFavorites"> -->
-          <!-- Eliminar favoritas
-          </button> -->
         </div>
       </main>
 
