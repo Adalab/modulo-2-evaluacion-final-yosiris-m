@@ -53,38 +53,10 @@ function printTvSeriesList(data) {
 
     //añade la serie que pulsas al listado de favoritas:
     item.addEventListener("click", function () {
-      const itemFav = document.createElement("li");
-
-      const titleFav = document.createElement("p");
-      titleFav.innerText = tvSeries.show.name;
-      item.className = "itemFav";
-
       favorites.push(tvSeries);
       localStorage.setItem("favorites", JSON.stringify(favorites));
-
-      const imgFav = document.createElement("img");
-      imgFav.className = "favListItemImg";
-
-      if (tvSeries.show.image === null) {
-        //la imagen de la serie es nula
-        imgFav.src = `https://via.placeholder.com/210x295/ffffff/666666/?text=${tvSeries.show.name}`;
-      } else {
-        //cuando la imagen de la serie no es nula
-        imgFav.src = tvSeries.show.image.medium;
-      }
-
-      tvSeriesFavList.appendChild(itemFav);
-      itemFav.appendChild(imgFav);
-      itemFav.appendChild(titleFav);
-
-      const btnDeleteFav = document.createElement("button");
-      btnDeleteFav.innerText = "Delete";
-      console.log(btnDeleteFav);
-      itemFav.appendChild(btnDeleteFav);
-
-      btnDeleteFav.addEventListener("click", function () {
-        // btnDeleteFav.remove();
-      });
+      item.className = "itemFav";
+      printFavorite(tvSeries);
     });
   }
 }
@@ -97,21 +69,26 @@ function clearTvSeriesList() {
 }
 
 //function shoFavorites() {
-for (const show of favorites) {
+for (const tvSeries of favorites) {
+  printFavorite(tvSeries);
+}
+//}
+
+function printFavorite(tvSeries) {
   const itemFav = document.createElement("li");
 
   const titleFav = document.createElement("p");
-  titleFav.innerText = show.show.name;
+  titleFav.innerText = tvSeries.show.name;
 
   const imgFav = document.createElement("img");
   imgFav.className = "favListItemImg";
 
-  if (show.show.image === null) {
+  if (tvSeries.show.image === null) {
     //la imagen de la serie es nula
     imgFav.src = `https://via.placeholder.com/210x295/ffffff/666666/?text=${tvSeries.show.name}`;
   } else {
     //cuando la imagen de la serie no es nula
-    imgFav.src = show.show.image.medium;
+    imgFav.src = tvSeries.show.image.medium;
   }
 
   tvSeriesFavList.appendChild(itemFav);
@@ -124,9 +101,6 @@ for (const show of favorites) {
   itemFav.appendChild(btnDeleteFav);
 
   btnDeleteFav.addEventListener("click", function () {
-    // btnDeleteFav.remove();
+    itemFav.remove();
   });
 }
-//}
-
-//function printFavorite() {}
