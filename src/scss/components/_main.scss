@@ -1,16 +1,21 @@
+body {
+  background-color: darkgrey;
+  font-family: "KoHo", sans-serif;
+}
+
 .main-series {
   background-size: cover;
   height: 100vh;
+  color: aliceblue;
 }
 .container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 
   &__form {
     justify-content: center;
     text-align: center;
-    padding-top: 50px;
-    width: 100vw;
+    margin: 40px 0 10px 0;
   }
 
   &__inputName {
@@ -22,26 +27,47 @@
   }
 
   &__SerieFav {
-    width: 50vw;
+    width: 300px;
+  }
+
+  &__showList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
   }
 }
+
+.itemCommon {
+  cursor: pointer;
+  list-style: none;
+  margin: 10px;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+
+  .imgSearch {
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+  }
+}
+
 .item {
-  background-color: pink;
-  color: rgb(131, 8, 8);
-  margin-bottom: 20px;
+  color: rgb(83, 83, 83);
+
+  &:hover {
+    background-color: rgb(192, 192, 192);
+    transition: background-color 0.2s;
+  }
 }
 
 .itemFav {
-  background-color: rgb(131, 8, 8);
-  color: pink;
-  margin-bottom: 20px;
+  background-color: rgb(94, 121, 128);
+  color: rgb(255, 255, 255);
 }
 
 .favListItemImg {
-  width: 100px;
-  height: 100px;
-}
-
-.favListItemImg {
-  height: 50px;
+  width: 130px;
+  padding-top: 10px;
 }

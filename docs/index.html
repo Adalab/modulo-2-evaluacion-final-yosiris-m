@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Evaluación final</title>
     <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=KoHo:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div class="page">
       
       <main class="main-series">
+        <form class="container__form js-form">
+          <input
+            class="js-inputName container__inputName"
+            type="text"
+            value=""
+            placeholder="Type the show name"
+          />
+          <button type="submit" class="container__btnSearch">Search</button>
+        </form>
         <div class="container">
           <div class="container__SerieFav">
-            <form class="container__form">
-              <input
-                class="js-inputName container__inputName"
-                type="text"
-                value="boj"
-              />
-              <button type="button" class="js-btnSearch container__btnSearch">
-                Search
-              </button>
-            </form>
             <h2>Mis series favoritas</h2>
-            <div class="js-favorites container__favorites"></div>
+            <ul class="js-favorites"></ul>
             <button class="js-deleteFavorites container_deleteFavorites">
               Eliminar favoritas
             </button>
