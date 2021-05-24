@@ -2,7 +2,7 @@
 
 const inputName = document.querySelector(".js-inputName");
 const btnSearch = document.querySelector(".js-btnSearch");
-const btnDeleteFav = document.querySelector(".js-deleteFavorites");
+const btnDelete = document.querySelector(".js-deleteFavorites");
 const showList = document.querySelector(".js-showList");
 const showFavList = document.querySelector(".js-favorites");
 
@@ -95,6 +95,7 @@ function printFavorite(obj) {
   itemFav.appendChild(imgFav);
   itemFav.appendChild(titleFav);
 
+  //cuando haga clic en delete se eliminen los datos del arary selecionad
   const btnDeleteFav = document.createElement("button");
   btnDeleteFav.innerText = "Delete";
   itemFav.appendChild(btnDeleteFav);
@@ -106,14 +107,16 @@ function printFavorite(obj) {
 
     //const favorite = favorites.filter((removeLoSt) => removeLoSt.id !== true);
     favorites = favorites.filter(function (removeLoSt) {
-      console.log("el id de la bola es:", removeLoSt.show.id);
-      console.log("-------");
+      // console.log("el id de la bola es:", removeLoSt.show.id);
+      // console.log("-------");
       return removeLoSt.show.id !== obj.show.id;
     });
     localStorage.setItem("favorites", JSON.stringify(favorites));
     console.log(favorites);
-    //cuando haga clic en delete se eliminen los datos del arary selecionad
   });
 
-  //favorites = JSON.stringify(favorite);
+  btnDelete.addEventListener("click", function (obj) {
+    itemFav.remove();
+    btnDeleteFav.remove(obj);
+  });
 }
