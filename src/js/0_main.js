@@ -3,8 +3,8 @@
 const inputName = document.querySelector(".js-inputName");
 const btnSearch = document.querySelector(".js-btnSearch");
 const btnDeleteFav = document.querySelector(".js-deleteFavorites");
-const tvSeriesList = document.querySelector(".js-tvSeriesList");
-const tvSeriesFavList = document.querySelector(".js-favorites");
+const showList = document.querySelector(".js-showList");
+const showFavList = document.querySelector(".js-favorites");
 
 const localFavorites = localStorage.getItem("favorites");
 
@@ -21,86 +21,99 @@ function onBtnSearchClick() {
   fetch(`http://api.tvmaze.com/search/shows?q=${inputName.value}`)
     .then((response) => response.json())
     .then((data) => {
-      clearTvSeriesList();
-      printTvSeriesList(data);
+      clearShowList();
+      printShowList(data);
     });
 }
 btnSearch.addEventListener("click", onBtnSearchClick);
 
-function printTvSeriesList(data) {
-  for (const tvSeries of data) {
-    //console.log(tvSeries);
+function printShowList(data) {
+  for (const obj of data) {
+    //console.log(obj);
     //crea un elemento en el html
     const item = document.createElement("li");
-    tvSeriesList.appendChild(item);
+    showList.appendChild(item);
     //crea un elemento en el html
     const title = document.createElement("p");
     //le asigno un valor a un elemento creado en el html
-    title.innerText = tvSeries.show.name;
+    title.innerText = obj.show.name;
     item.className = "item";
 
     const img = document.createElement("img");
 
-    if (tvSeries.show.image === null) {
+    if (obj.show.image === null) {
       //la imagen de la serie es nula
-      img.src = `https://via.placeholder.com/210x295/ffffff/666666/?text=${tvSeries.show.name}`;
+      img.src = `https://via.placeholder.com/210x295/ffffff/666666/?text=${obj.show.name}`;
     } else {
       //cuando la imagen de la serie no es nula
-      img.src = tvSeries.show.image.medium;
+      img.src = obj.show.image.medium;
     }
     item.appendChild(img);
     item.appendChild(title);
 
     //añade la serie que pulsas al listado de favoritas:
     item.addEventListener("click", function () {
-      favorites.push(tvSeries);
+      favorites.push(obj);
       localStorage.setItem("favorites", JSON.stringify(favorites));
       item.className = "itemFav";
-      printFavorite(tvSeries);
+      printFavorite(obj);
     });
   }
 }
 
 // console.log(favorites);
 
-function clearTvSeriesList() {
+function clearShowList() {
   //con esta funcion elimino los elementos buscados
-  tvSeriesList.innerHTML = "";
+  showList.innerHTML = "";
 }
 
 //function shoFavorites() {
-for (const tvSeries of favorites) {
-  printFavorite(tvSeries);
+for (const obj of favorites) {
+  printFavorite(obj);
 }
 //}
 
-function printFavorite(tvSeries) {
+function printFavorite(obj) {
   const itemFav = document.createElement("li");
 
   const titleFav = document.createElement("p");
-  titleFav.innerText = tvSeries.show.name;
+  titleFav.innerText = obj.show.name;
 
   const imgFav = document.createElement("img");
   imgFav.className = "favListItemImg";
 
-  if (tvSeries.show.image === null) {
+  if (obj.show.image === null) {
     //la imagen de la serie es nula
-    imgFav.src = `https://via.placeholder.com/210x295/ffffff/666666/?text=${tvSeries.show.name}`;
+    imgFav.src = `https://via.placeholder.com/210x295/ffffff/666666/?text=${obj.show.name}`;
   } else {
     //cuando la imagen de la serie no es nula
-    imgFav.src = tvSeries.show.image.medium;
+    imgFav.src = obj.show.image.medium;
   }
 
-  tvSeriesFavList.appendChild(itemFav);
+  showFavList.appendChild(itemFav);
   itemFav.appendChild(imgFav);
   itemFav.appendChild(titleFav);
 
   const btnDeleteFav = document.createElement("button");
   btnDeleteFav.innerText = "Delete";
-  console.log(btnDeleteFav);
   itemFav.appendChild(btnDeleteFav);
 
   btnDeleteFav.addEventListener("click", function () {
     itemFav.remove();
+
+    //console.log("quiero eliminar este:", obj.show.id);
+
+    //const favorite = favorites.filter((removeLoSt) => removeLoSt.id !== true);
+    favorites = favorites.filter(function (removeLoSt) {
+      console.log("el id de la bola es:", removeLoSt.show.id);
+      console.log("-------");
+      return removeLoSt.show.id !== obj.show.id;
+    });
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    console.log(favorites);
+    //cuando haga clic en delete se eliminen los datos del arary selecionad
   });
+
+  //favorites = JSON.stringify(favorite);
 }

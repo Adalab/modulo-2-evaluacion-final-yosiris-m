@@ -1,6 +1,25 @@
+.main-series {
+  background-size: cover;
+  height: 100vh;
+}
 .container {
   display: flex;
   flex-direction: row;
+
+  &__form {
+    justify-content: center;
+    text-align: center;
+    padding-top: 50px;
+    width: 100vw;
+  }
+
+  &__inputName {
+    width: 800px;
+    height: 25px;
+    background-color: rgb(192, 186, 186);
+    color: #111110;
+    border: 1px solid grey;
+  }
 
   &__SerieFav {
     width: 50vw;
@@ -21,4 +40,8 @@
 .favListItemImg {
   width: 100px;
   height: 100px;
+}
+
+.favListItemImg {
+  height: 50px;
 }
