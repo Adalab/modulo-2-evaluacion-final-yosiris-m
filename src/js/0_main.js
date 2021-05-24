@@ -76,6 +76,15 @@ function printTvSeriesList(data) {
       tvSeriesFavList.appendChild(itemFav);
       itemFav.appendChild(imgFav);
       itemFav.appendChild(titleFav);
+
+      const btnDeleteFav = document.createElement("button");
+      btnDeleteFav.innerText = "Delete";
+      console.log(btnDeleteFav);
+      itemFav.appendChild(btnDeleteFav);
+
+      btnDeleteFav.addEventListener("click", function () {
+        // btnDeleteFav.remove();
+      });
     });
   }
 }
@@ -87,6 +96,7 @@ function clearTvSeriesList() {
   tvSeriesList.innerHTML = "";
 }
 
+//function shoFavorites() {
 for (const show of favorites) {
   const itemFav = document.createElement("li");
 
@@ -107,4 +117,16 @@ for (const show of favorites) {
   tvSeriesFavList.appendChild(itemFav);
   itemFav.appendChild(imgFav);
   itemFav.appendChild(titleFav);
+
+  const btnDeleteFav = document.createElement("button");
+  btnDeleteFav.innerText = "Delete";
+  console.log(btnDeleteFav);
+  itemFav.appendChild(btnDeleteFav);
+
+  btnDeleteFav.addEventListener("click", function () {
+    // btnDeleteFav.remove();
+  });
 }
+//}
+
+//function printFavorite() {}
