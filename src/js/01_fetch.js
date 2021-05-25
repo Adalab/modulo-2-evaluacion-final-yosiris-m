@@ -1,4 +1,3 @@
-// extraer los datos de la api
 function onFormSubmit(ev) {
   ev.preventDefault();
 

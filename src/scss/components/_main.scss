@@ -17,48 +17,6 @@ body {
   height: 100vh;
   color: aliceblue;
 }
-.container {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-
-  &__form {
-    justify-content: center;
-    text-align: center;
-    margin: 40px 0 10px 0;
-  }
-
-  &__inputName {
-    width: 800px;
-    height: 40px;
-    background-color: rgb(192, 186, 186);
-    color: #111110;
-    border: 1px solid grey;
-    padding-left: 10px;
-  }
-
-  &__SerieFav {
-    width: 300px;
-  }
-
-  &__showList {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-
-  &__deleteFavorites {
-    margin-left: 27px;
-    margin-top: 15px;
-    height: 28px;
-    width: 325px;
-  }
-}
-.container__btnSearch {
-  height: 40px;
-  width: 130px;
-  cursor: pointer;
-}
 
 .itemCommon {
   cursor: pointer;
