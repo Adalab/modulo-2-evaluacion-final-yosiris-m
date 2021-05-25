@@ -56,6 +56,7 @@ body {
 }
 .titleFav {
   height: 50px;
+  font-size: 20px;
 }
 
 .titleBox {
@@ -65,16 +66,18 @@ body {
 }
 
 .buttonFav {
-  height: 28px;
+  height: 20px;
   justify-content: center;
   align-items: center;
   border: 1px solid grey;
   cursor: pointer;
+  font-size: 15px;
+  width: 30px;
 }
 
 .titleButton {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
-  margin-left: 10px;
+  margin-left: 3px;
 }

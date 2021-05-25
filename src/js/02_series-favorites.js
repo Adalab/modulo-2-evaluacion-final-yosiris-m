@@ -21,7 +21,7 @@ function printFavorite(obj) {
 
   const btnDeleteFav = document.createElement("button");
   btnDeleteFav.className = "buttonFav titleButton";
-  btnDeleteFav.innerText = "Delete";
+  btnDeleteFav.innerText = "x";
   itemFav.appendChild(btnDeleteFav);
 
   btnDeleteFav.addEventListener("click", function () {
