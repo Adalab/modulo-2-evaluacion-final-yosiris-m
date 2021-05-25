@@ -16,6 +16,7 @@ function printShowList(data) {
     showList.appendChild(item);
     //crea un elemento en el html
     const title = document.createElement("p");
+    //p.className = "titleFav";
     //le asigno un valor a un elemento creado en el html
     title.innerText = obj.show.name;
     item.className = "itemCommon item";

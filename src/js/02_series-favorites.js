@@ -1,9 +1,9 @@
 function printFavorite(obj) {
   const itemFav = document.createElement("li");
-
+  itemFav.className = "titleBox ";
   const titleFav = document.createElement("p");
   titleFav.innerText = obj.show.name;
-  titleFav.className = "titleFav";
+  titleFav.className = "titleFav titleButton";
 
   const imgFav = document.createElement("img");
   imgFav.className = "favListItemImg";
@@ -18,10 +18,12 @@ function printFavorite(obj) {
 
   showFavList.appendChild(itemFav);
   itemFav.appendChild(imgFav);
+
   itemFav.appendChild(titleFav);
 
   //cuando haga clic en delete se eliminen los datos del arary selecionad
   const btnDeleteFav = document.createElement("button");
+  btnDeleteFav.className = "buttonFav titleButton";
   btnDeleteFav.innerText = "Delete";
   itemFav.appendChild(btnDeleteFav);
 
