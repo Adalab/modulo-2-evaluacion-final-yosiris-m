@@ -24,23 +24,20 @@ function printFavorite(obj) {
   btnDeleteFav.innerText = "x";
   itemFav.appendChild(btnDeleteFav);
 
-  btnDeleteFav.addEventListener("click", function () {
+  const deleteFavorite = () => {
     itemFav.remove();
     deleteTvSeries();
-  });
+  };
 
-  btnDelete.addEventListener("click", function () {
-    itemFav.remove();
-    deleteTvSeries();
-  });
+  btnDeleteFav.addEventListener("click", deleteFavorite);
+  btnDelete.addEventListener("click", deleteFavorite);
 
   function deleteTvSeries() {
     favorites = favorites.filter(function (removeLoSt) {
       return removeLoSt.show.id !== obj.show.id;
     });
 
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-    console.log(favorites);
+    saveFavorites();
   }
 }
 

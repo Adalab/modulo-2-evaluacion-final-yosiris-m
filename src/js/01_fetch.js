@@ -4,7 +4,6 @@ function onFormSubmit(ev) {
   fetch(`//api.tvmaze.com/search/shows?q=${inputName.value}`)
     .then((response) => response.json())
     .then((data) => {
-      clearShowList();
       printShowList(data);
     });
 }

@@ -9,13 +9,13 @@ const showFavList = document.querySelector(".js-favorites");
 let favorites = getFavorites();
 
 function printShowList(data) {
+  clearShowList();
   for (const obj of data) {
     const item = document.createElement("li");
     showList.appendChild(item);
 
-    const title = document.createElement("p");
+    const title = document.createTextNode(obj.show.name);
 
-    title.innerText = obj.show.name;
     item.className = "itemCommon item";
 
     const img = document.createElement("img");
