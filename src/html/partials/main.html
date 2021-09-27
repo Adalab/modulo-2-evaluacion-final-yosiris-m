@@ -8,7 +8,7 @@
         value=""
         placeholder="Type the show name"
       />
-      <button type="submit" class="container__btnSearch">Search</button>
+      <button type="submit" class="container__btnSearch">Buscar</button>
     </form>
     <div>
       <div class="js-showList container__showList"></div>
@@ -18,11 +18,13 @@
       <div class="container__SerieFav">
         <h2 class="subtitle">My favorite series</h2>
         <div class="wrapper">
-          <ul class="js-favorites favoritesBox"></ul>
+          <div class="js-favorites favoritesBox"></div>
         </div>
-        <button class="js-deleteFavorites container__deleteFavorites">
-          Delete favorites list
-        </button>
+        <div class="deleteBtn">
+          <button class="js-deleteFavorites container__deleteFavorites">
+            Delete favorites list
+          </button>
+        </div>
       </div>
     </div>
   </div>

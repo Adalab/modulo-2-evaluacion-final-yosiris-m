@@ -20,7 +20,7 @@ body {
 
 .main-series {
   background-size: cover;
-  // height: 100vh;
+
   color: aliceblue;
 }
 
@@ -45,7 +45,7 @@ body {
 
 .wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -84,23 +84,33 @@ body {
   padding-top: 10px;
   display: flex;
   flex-direction: column;
-  // width: 350px;
 }
 
 .buttonFav {
-  // height: 20px;
   justify-content: center;
   align-items: center;
   border: 1px solid grey;
   cursor: pointer;
   font-size: 15px;
-
-  // margin-top: 5px;
-  // width: 30px;
 }
 
 .titleButton {
   padding-top: 15px;
   padding-bottom: 7px;
   font-size: 1rem;
+}
+
+.deleteBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container__btnSearch {
+  width: 80px;
+  cursor: pointer;
+  height: 35px;
+  background-color: rgb(192, 195, 199);
+  color: rgb(133, 130, 130);
+  border: 1px solid grey;
 }

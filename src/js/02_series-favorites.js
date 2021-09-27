@@ -1,6 +1,9 @@
 "use strict";
+
+const btnDelete = document.querySelector(".js-deleteFavorites");
+
 function printFavorite(obj) {
-  const itemFav = document.createElement("li");
+  const itemFav = document.createElement("div");
   itemFav.className = "titleBox ";
   const titleFav = document.createElement("p");
   titleFav.innerText = obj.show.name;

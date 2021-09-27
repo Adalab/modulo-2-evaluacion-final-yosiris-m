@@ -1,4 +1,7 @@
 "use strict";
+const inputName = document.querySelector(".js-inputName");
+const form = document.querySelector(".js-form");
+
 function onFormSubmit(ev) {
   ev.preventDefault();
 

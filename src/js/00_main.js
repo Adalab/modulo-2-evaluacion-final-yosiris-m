@@ -1,8 +1,5 @@
 "use strict";
 
-const inputName = document.querySelector(".js-inputName");
-const form = document.querySelector(".js-form");
-const btnDelete = document.querySelector(".js-deleteFavorites");
 const showList = document.querySelector(".js-showList");
 const showFavList = document.querySelector(".js-favorites");
 
@@ -11,7 +8,7 @@ let favorites = getFavorites();
 function printShowList(data) {
   clearShowList();
   for (const obj of data) {
-    const item = document.createElement("li");
+    const item = document.createElement("div");
     showList.appendChild(item);
 
     const title = document.createTextNode(obj.show.name);
