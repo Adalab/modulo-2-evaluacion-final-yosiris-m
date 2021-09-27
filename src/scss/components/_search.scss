@@ -1,6 +1,12 @@
 .container {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+
+  @media all and (min-width: 668px) {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
 
   &__form {
     justify-content: center;
@@ -9,12 +15,17 @@
   }
 
   &__inputName {
-    width: 800px;
-    height: 40px;
+    width: 250px;
+    height: 35px;
     background-color: rgb(192, 186, 186);
     color: #111110;
     border: 1px solid grey;
-    padding-left: 10px;
+    padding-left: 15px;
+    margin-left: 35px;
+
+    @media all and (min-width: 668px) {
+      width: 650px;
+    }
   }
 
   &__SerieFav {
@@ -24,21 +35,26 @@
   &__showList {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     margin-top: 20px;
   }
 
   &__deleteFavorites {
-    margin-left: 10px;
+    margin-left: 10%;
     margin-top: 15px;
     height: 28px;
-    width: 325px;
+    width: 290px;
     margin-bottom: 20px;
     font-weight: normal;
+    color: honeydew;
+    border: honeydew;
+    background-color: rgb(153, 185, 183);
   }
 }
 .container__btnSearch {
-  height: 40px;
-  width: 130px;
+  height: 35px;
+  width: 50px;
   cursor: pointer;
 }

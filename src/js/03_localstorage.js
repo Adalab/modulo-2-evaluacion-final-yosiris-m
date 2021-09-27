@@ -1,3 +1,4 @@
+"use strict"
 function getFavorites() {
   const localFavorites = localStorage.getItem("favorites");
 
