@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 function printFavorite(obj) {
   const itemFav = document.createElement("li");
   itemFav.className = "titleBox ";

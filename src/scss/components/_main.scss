@@ -2,7 +2,7 @@ body {
   background-color: darkgrey;
   font-family: "KoHo", sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -14,6 +14,8 @@ body {
 
 .subtitle {
   text-align: center;
+  font-size: 30px;
+  padding-top: 1rem;
 }
 
 .main-series {
@@ -37,8 +39,24 @@ body {
   }
 }
 
+.containerBox {
+  background-color: rgb(193, 197, 193);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.favoritesBox {
+  padding: 0;
+}
+
 .item {
-  color: rgb(83, 83, 83);
+  color: white;
+  font-size: 20px;
 
   &:hover {
     background-color: rgb(192, 192, 192);
@@ -52,37 +70,37 @@ body {
 }
 
 .favListItemImg {
-  width: 130px;
-  padding-top: 18px;
-  margin-left: 30px;
-  padding-right: 15px;
+  margin-top: 1rem;
+  width: 100;
+  text-align: center;
   cursor: pointer;
 }
 .titleFav {
-  height: 50px;
-  font-size: 20px;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .titleBox {
+  padding-top: 10px;
   display: flex;
-  flex-direction: row;
-  width: 350px;
+  flex-direction: column;
+  // width: 350px;
 }
 
 .buttonFav {
-  height: 20px;
+  // height: 20px;
   justify-content: center;
   align-items: center;
   border: 1px solid grey;
   cursor: pointer;
   font-size: 15px;
-  width: 30px;
+
+  // margin-top: 5px;
+  // width: 30px;
 }
 
 .titleButton {
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  margin-left: 3px;
-  max-width: 110px;
+  padding-top: 15px;
+  padding-bottom: 7px;
+  font-size: 1rem;
 }

@@ -17,19 +17,13 @@
   &__inputName {
     width: 250px;
     height: 35px;
-    background-color: rgb(192, 186, 186);
-    color: #111110;
+    background-color: rgb(187, 172, 172);
+    color: white;
     border: 1px solid grey;
     padding-left: 15px;
-    margin-left: 35px;
-
     @media all and (min-width: 668px) {
       width: 650px;
     }
-  }
-
-  &__SerieFav {
-    width: 300px;
   }
 
   &__showList {
@@ -42,19 +36,26 @@
   }
 
   &__deleteFavorites {
-    margin-left: 10%;
+    margin-left: 6%;
     margin-top: 15px;
     height: 28px;
     width: 290px;
     margin-bottom: 20px;
     font-weight: normal;
-    color: honeydew;
+    color: rgb(246, 233, 243);
     border: honeydew;
-    background-color: rgb(153, 185, 183);
+    background-color: rgb(146, 149, 149);
+    font-size: 18px;
+    font-family: "KoHo", sans-serif;
+
+    @media all and (min-width: 768px) {
+      background-color: whitesmoke;
+      margin-left: 29%;
+    }
   }
 }
 .container__btnSearch {
   height: 35px;
-  width: 50px;
+  width: 80px;
   cursor: pointer;
 }
