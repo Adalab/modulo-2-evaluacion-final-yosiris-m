@@ -18,40 +18,35 @@
   </head>
 
   <body class="body">
-    <div class="page">
-      <main class="main-series">
-        <div class="box">
-          <h1 class="title">Series Finder</h1>
-          <form class="container__form js-form">
-            <input
-              class="js-inputName container__inputName"
-              type="text"
-              value=""
-              placeholder="Type the show name"
-            />
-            <button type="submit" class="container__btnSearch">Buscar</button>
-          </form>
-          <div>
-            <div class="js-showList container__showList"></div>
-          </div>
+    <main class="mainBox">
+      <div class="header">
+        <h1 class="title">Series Finder</h1>
+      </div>
+      <form class="container__form js-form">
+        <input
+          class="js-inputName container__inputName"
+          type="text"
+          value=""
+          placeholder="Type the show name"
+        />
+        <button type="submit" class="container__btnSearch">Buscar</button>
+      </form>
 
-          <div class="containerBox">
-            <div class="container__SerieFav">
-              <h2 class="subtitle">My favorite series</h2>
-              <div class="wrapper">
-                <div class="js-favorites favoritesBox"></div>
-              </div>
-              <div class="deleteBtn">
-                <button class="js-deleteFavorites container__deleteFavorites">
-                  Delete favorites list
-                </button>
-              </div>
-            </div>
-          </div>
+      <div>
+        <div class="js-showList container__showList"></div>
+      </div>
+
+      <div class="containerBox">
+        <h2 class="subtitle">My favorite series</h2>
+        <div class="js-favorites favoritesBox"></div>
+        <div class="deleteBtn">
+          <button class="js-deleteFavorites container__deleteFavorites">
+            Delete favorites list
+          </button>
         </div>
-      </main>
+      </div>
+    </main>
 
-    </div>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
