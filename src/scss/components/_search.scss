@@ -9,22 +9,18 @@
   }
 
   &__form {
-    justify-content: center;
-    text-align: center;
-    margin: 40px 0 10px 0;
+    display: flex;
+    margin-top: 40px;
   }
 
   &__inputName {
-    width: 250px;
+    width: 100%;
     height: 35px;
     background-color: rgb(192, 195, 199);
-    color: rgb(245, 234, 234);
+    color: black;
     border: 1px solid grey;
     padding-left: 15px;
-
-    @media all and (min-width: 668px) {
-      width: 650px;
-    }
+    font-size: 1.1rem;
   }
 
   &__showList {
@@ -48,7 +44,7 @@
     font-family: "KoHo", sans-serif;
 
     @media all and (min-width: 768px) {
-      color: rgb(246, 233, 243);
+      color: rgb(233, 235, 246);
     }
   }
 }

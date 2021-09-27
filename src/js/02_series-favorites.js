@@ -4,7 +4,7 @@ const btnDelete = document.querySelector(".js-deleteFavorites");
 
 function printFavorite(obj) {
   const itemFav = document.createElement("div");
-  itemFav.className = "titleBox ";
+  itemFav.className = "favBox";
   const titleFav = document.createElement("p");
   titleFav.innerText = obj.show.name;
   titleFav.className = "titleFav titleButton";
@@ -23,9 +23,9 @@ function printFavorite(obj) {
 
   itemFav.appendChild(titleFav);
 
-  const btnDeleteFav = document.createElement("button");
-  btnDeleteFav.className = "buttonFav titleButton";
-  btnDeleteFav.innerText = "x";
+  const btnDeleteFav = document.createElement("div");
+  btnDeleteFav.className = "buttonFav";
+  btnDeleteFav.innerHTML = '<i class="far fa-trash-alt"></i> Eliminar';
   itemFav.appendChild(btnDeleteFav);
 
   const deleteFavorite = () => {

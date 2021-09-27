@@ -26,7 +26,17 @@ function printShowList(data) {
     item.appendChild(img);
     item.appendChild(title);
 
+    if (favorites.find((item) => item.show.id === obj.show.id)) {
+      item.className += " itemFav";
+      const fav = document.createElement("i");
+      fav.className = "fas fa-heart";
+      item.appendChild(fav);
+    }
+
     item.addEventListener("click", function () {
+      if (favorites.find((item) => obj.show.id === item.show.id)) {
+        return;
+      }
       favorites.push(obj);
       saveFavorites();
       item.className = "itemCommon itemFav";
