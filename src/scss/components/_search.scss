@@ -34,14 +34,22 @@
 
   &__deleteFavorites {
     margin-top: 15px;
-    height: 28px;
+    height: 35px;
     width: 200px;
     margin-bottom: 20px;
     color: rgb(246, 233, 243);
     border: honeydew;
-    background-color: rgb(146, 149, 149);
+    background-color: rgb(130, 143, 143);
     font-size: 18px;
     font-family: "KoHo", sans-serif;
+    // position: fixed;
+    // bottom: 10px;
+    // left: 900px;
+
+    &:hover {
+      background-color: rgb(133, 128, 112);
+      color: rgb(226, 142, 142);
+    }
 
     @media all and (min-width: 768px) {
       color: rgb(233, 235, 246);

@@ -69,6 +69,7 @@ body {
 .itemFav {
   background-color: rgb(94, 121, 128);
   color: rgb(255, 255, 255);
+  width: 280px;
 }
 
 .favListItemImg {
@@ -80,6 +81,7 @@ body {
 .titleFav {
   font-size: 1rem;
   text-align: center;
+  padding-top: 13px;
 }
 
 .favBox {
@@ -87,6 +89,11 @@ body {
   display: flex;
   flex-direction: column;
   margin: 30px;
+
+  &:hover {
+    background-color: rgb(221, 219, 217);
+    color: rgb(255, 255, 255);
+  }
 }
 
 .buttonFav {
@@ -98,6 +105,11 @@ body {
   line-height: 30px;
   background-color: grey;
   margin-top: 10px;
+
+  &:hover {
+    background-color: rgb(133, 128, 112);
+    color: rgb(226, 142, 142);
+  }
 }
 
 .deleteBtn {
@@ -113,4 +125,5 @@ body {
   background-color: rgb(192, 195, 199);
   color: rgb(133, 130, 130);
   border: 1px solid grey;
+  font-size: 1.1rem;
 }
